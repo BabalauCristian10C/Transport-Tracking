@@ -222,4 +222,4 @@ async def logout():
 
 if __name__ == "__main__":
     initialSetup()
-    application.run(debug=debug, host='0.0.0.0', port = 5000)
+    application.run(debug=debug, host='0.0.0.0')
