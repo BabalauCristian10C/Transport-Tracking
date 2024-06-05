@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UDP Express</title>
+    <link href="https://css.gg/css?=" rel="stylesheet">
+    <script src="static/assets/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="static/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/navbar-static/">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link type="image/png" sizes="32x32" rel="icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAMFJREFUSEvtleERATEQhb/rQAeoAB3ogBLoQAk6oQQ60IHRAR3ogFmzN3NWZJkVv3L/Mrt5X/Lmba6h8NcU1uevgCmwAQbBW52BJXAQne4NpNAPirfbRWtoATetRm170umKVUDrf7XIDbJrkVWQodm+kV3ocKbKj4SmYmqbZWgmwNUUesAxM/kfA0RXIGtgr5CZrnPPylcA1/hEQwW4rr1Y9Mvn+gSMbUznmoyRe7Z8wwVYATsLCOqmt0d/Lu6higPuzfInGSZy8y0AAAAASUVORK5CYII="/>
+    <link rel="icon" href="/static/image/logo.svg" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        h1 {
+            font-weight: bolder;
+            color: white;
+        }
+
+        h2 {
+            font-weight: bolder;
+            color: white;
+        }
+
+        p {
+            font-size: 15px;
+            opacity: 70%;
+        }
+
+        .card-body1 {
+            padding: 50px;
+        }
+
+        .card {
+            border: 0 !important;
+        }
+
+        @media (max-width:961px) {
+            .fff {
+                flex-direction: column;
+                margin: 7%;
+            }
+            .mob80 {
+                width:80%;
+                margin:20px 10%;
+            }
+        }
+
+        .padding20 {
+            padding: 20px;
+        }
+
+        svg {
+            margin-bottom: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--ХЕДЕР-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top">
+        <div class="container justify-content-center">
+            <a class="navbar-brand" href="{{ url_for('router', to='index') }}"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="20" fill="currentColor" class="bi bi-box-seam" viewBox="0 0 16 16" style="margin-top: 6px;">
+  <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"></path>
+</svg>UDP&nbsp;Express</a>
+            <div class="collapse navbar-collapse justify-content-center" id="navbar1">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('router', to='index') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('router', to='services') }}">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('router', to ='logistics') }}">Logistics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('router', to = 'contacts') }}">Contacts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('router', to='about') }}">About us</a>
+                    </li>
+                </ul>
+            </div>
+            <div style="display: flex; justify-content: center; align-items: center; text-align: center;">
+                <a class="nav-link text-decoration-none text-light">support@udp-express.com</a>
+            </div>
+
+            <!-- Burger button -->
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbar1"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+                    class="navbar-toggler-icon"></span></button>
+
+        </div>
+    </nav>
+    <!--КОНЕЦ ХЕДЕРА-->
+    <!--ГЛАВНЫЙ БЛОК-->
+    <div
+        style="background-image: url(static/image/img.png); width: 100%; height: 500px; overflow: hidden; display: flex; align-items: center; position: relative;">
+        <div
+            style="display:flex; margin: auto; text-align: center; justify-content: space-around; flex-direction: column;">
+            <h1>OUR <span style="color:#0d6efd!important">SHIPPING</span> SERVICE</h1>
+            <h2>YOUR PATH TO PEACE OF MIND</h2>
+            <div style="margin-top: 20px;" class="input-group mob80">
+                <form class="input-group" style="margin-top: 20px;" action="{{ url_for('search') }}" method="POST">
+                    <input type="search" class="form-control rounded" name="track" placeholder="Your Track Number"
+                        aria-label="Search" aria-describedby="search-addon" />
+                    <button type="submit" class="btn btn-primary">search</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <!--ВСЯ ИНФА НАЧАЛО!-->
+    <div style="width:80%; margin: 5% 10%">
+        <h1 style="color:#0d6efd!important">About company</h1>
+
+        <br>
+        <p>Dear Colleagues, Partners, today UDP EXPRESS is offering you a wide range of express delivery services of
+            high quality. UDP EXPRESS is a transport and forwarding company. Ever since the company was set up in 1992,
+            it has grown to become one of the leaders of transport and forwarding market by providing its customers with
+            the best possible shipping efficiency. We employ over 2000 specialists in our branch offices United States,
+            France, Spain, United Kingdom, Italy, Canada and many other countries. We provide our customers with a wide
+            range of services including Air Freight, Import/Export Transportation, Transport Service throughout Russia
+            and CIS, Overnight Delivery, Customs Clearance Services. Our truck park consists of more than 100 items
+            ranging from 8 to 120 tons.</p>
+        <br>
+        <br>
+        <h3>Concept:</h3>
+        <p>Customer focus, top service quality and standards are the keys to our work, thanks to which we can offer our
+            customers reliable transportation and logistics solutions at reasonable prices</p>
+
+        <p>In shipping logistics, UDP EXPRESS is another name for top service quality, cutting-edge technologies and
+            business processes, keen understanding of market needs, and flexible business-tailored solutions for
+            customers</p>
+        <br>
+        <br>
+
+
+        <h3>Mission &amp; Corporate Values</h3>
+        <p>With our highly professional staff and strong corporate culture, we must become a number one assistant for
+            customers in logistics and parcel deliveries across worldwide offering a wide range of reliable and
+            efficient solutions.</p>
+        <p>Corporate values are the nature and essence of our company. These are the principles all employees,
+            regardless of their job title or level, should at all times adhere to in relationships with each other.
+            Corporate values are an integral part of our corporate culture</p>
+        <p>We seek to be a company its employees are proud of and customers trust and rightly so</p>
+        <br>
+        <ul>
+            <li>Trust: building relationships from trust and respect for colleagues, customers, partners of the company
+                and business community, in general</li>
+            <li>Openness: maintaining openness in communications and disclosures, business transparency – compliance
+                with all statutory and legal provisions and rules</li>
+            <li>Team spirit: getting more focused on the common goal than vested interest, helpfulness, mutual aid,
+                give-and-take, conscious acceptance of and commitment to corporate rules, regulations and values</li>
+            <li>Responsibility: prompt, full and strict performance of all assumed obligations and engagements,
+                efficient delegation of authority</li>
+            <li>Proactivity: proactivity in making constructive suggestions to improve business processes, commitment to
+                positive changes</li>
+        </ul>
+        <br>
+        <br><br>
+
+        <h1 style="color:#0d6efd!important">Privacy policy</h1>
+        <br>
+        <p>We are committed to working in accordance with the provisions of the UK Data Protection Act, and European
+            General Data Protection Regulations (GDPR). Our policies and procedures are aimed at ensuring the Privacy
+            and Security of any Personal Data/Personal Information we may collect about you.</p>
+        <p>This Privacy Policy lets you know about the collection, use, disclosure and storage of Personal Data that you
+            may provide to us. Examples of Personal Data include information that we collect from application forms and
+            other communications with us and may include identity details, names/ addresses, e-mail details telephone
+            numbers, and contract job and delivery details.</p>
+        <p>We collect this information/Personal Data so that we can respond to your enquiries and so that we can provide
+            you with the best possible service.</p>
+        <p>We do not use your Personal Data for marketing purposes and will not do without your express consent. We will
+            not collect sensitive information about you without your consent.</p>
+
+        <br>
+        <h3>Collection of Personal Information</h3>
+        <p>UDP EXPRESS collects and stores information about the contracts jobs and deliveries that we do. We use
+            information about our customers, their packages, and their dispatch/transport activity to provide or enhance
+            the services we provide, to communicate with customers about service levels and any additional services they
+            may find of value, to satisfy our legitimate business interests (including performing trend analysis and
+            market studies), to set prices, to open accounts and establish account holder credit limits, perform the
+            billing function, and comply with government regulations.</p>
+        <p>
+        </p>
+        <br>
+        <h3>Access to Your Personal Data</h3>
+        <p>You can find out what Personal Data we hold by contacting us, using the details below. Should we for any
+            reason be prevented from disclosing your personal information we will give reasons for any such refusal. If
+            any of our information is incorrect please advise us of the correct details and changes required, using the
+            contact details below and we will update or correct Personal Data in our possession.</p>
+        <br>
+        <h3>Our Retention of Your Personal Data</h3>
+        <p>We will not keep your Personal Data for longer than is necessary; We are however obliged to keep records for
+            a reasonable period; Our Policy for destruction of Data is 8 years after the end of any business
+            relationship with you.</p>
+        <br>
+        <h3>Cookies</h3>
+        <p>When you view this website, we may store some information on your computer. This will be in the form of a
+            cookie file. We use cookies to store information which we may use to improve the content of our site and to
+            customise the site to your preferences.</p>
+        <p>Cookies are small text files that a website can send to a user’s browser for storage on the hard drive.
+            Cookies can make use of the web easier by saving and administering status, application, preferences and
+            another user information.</p>
+
+
+<br>
+<br>
+<br>
+
+
+                <h1 style="color:#0d6efd!important">Terms of use</h1>
+                <br>
+                <h3>DEFINITIONS OF TERMS USED</h3>
+
+                <p>1. In these terms, the words or phrases below will have the following meanings:<br>
+                    a) You, your – the customer who asks us to provide a delivery service, including any employee, agent or subcontractor acting on your behalf.<br>
+                    b) We, our, us – Continental Courier Service Ltd, company number 04811697.<br>
+                    c) Consignment – any item or items we carry for you from one address to another, including any packaging.<br>
+                    d) Dangerous goods – anything you may ask us to deliver that could put the health and safety of other people at risk. This includes (but is not restricted to) explosives, radioactive material, and items requiring specialist treatment or handling during transportation.<br>
+                    e) Proof of delivery – a signature or company stamp obtained from the consignee acknowledging that the consignment has been received.<br>
+                </p>
+<br>
+<br>
+
+                <h3>GENERAL POINTS</h3>
+                <p>2. These are the terms under which we trade with you and they override any previous agreement between us. They cannot be changed or varied unless one of our directors agrees in writing. These terms will also override any terms or conditions you may seek to impose on your suppliers from time to time.</p>
+                <p>
+                    3. We are not a common carrier, and reserve the right at our absolute discretion to:<br>
+                    a) Subcontract any part or parts of a delivery by employing the services of any other person, firm or company who shall also have the power to subcontract.<br>
+                    b) Refuse to accept any consignment or part thereof for delivery.<br>
+                    c) Refuse to accept dangerous goods for delivery.</p>
+                <p>4. When you ask us to make a delivery on your behalf, you will be deemed to have accepted these terms.</p>
+                <p>5. Our liability to you is limited, and explained in detail below.</p>
+                <p>6. These terms are intended to be reasonable to both of us, and if any part of them should prove to be unenforceable or void at law, then it will not affect the rest.</p>
+                <p>7. If, for any reason, either of us chooses not to exercise any rights contained in these terms, then that will be regarded as a waiver of those rights for the future.</p>
+                <p>8. English law governs this agreement between you and us, and any dispute will be dealt with in the English courts.</p>
+<br>
+<br>
+                <h3>OUR RIGHTS AND OBLIGATIONS</h3>
+                <p>9. We may refuse to accept a consignment for delivery, or any part of it. We may also inspect a consignment if we believe that these terms may have been breached (for example, to check for dangerous goods).</p><p>
+                </p><p>10. We can use any method or route to deliver your consignment, including using subcontractors or agents. Your rights will not be affected where subcontractors are used by us. No subcontractor or agent shall be under any greater liability to you than we are, and we enter into this agreement with you on the basis that they are entitled to the limits of liability contained in these terms.</p>
+                <p>11. We will use our reasonable endeavours to deliver your consignment within the time you request, but unless we expressly agree in writing before accepting your consignment for delivery, we will not be liable for any loss or expenses you may suffer if the consignment is not delivered on time.
+                </p><p>12. If we fail to deliver the consignment by the time you requested, and items given below in paragraph 21 did not cause that failure, we will reduce our charge to the actual service level provided.</p>
+                <p>13. We will take all reasonable steps to obtain a proof of delivery at the time of delivery, and that proof of delivery will be conclusive evidence that the consignment was delivered complete and in good order, unless the consignee marks otherwise at the time of delivery. We will not be liable for any loss or misdelivery where delivery has been made in good faith to a person claiming to be the consignee, or an employee, subcontractor or agent of the consignee.</p>
+                <p>14. If you require a proof of delivery after delivery has been made, then we will endeavour to provide this to you, providing your request is made within 14 days from the date of dispatch. Requests made later than this will be dealt with at our absolute discretion. Settlement of our charges will not be conditional upon you receiving proofs of delivery, and you cannot delay or withhold payment pending receipt of proofs of delivery, irrespective of when any request was made to us.</p>
+                <p>15. We will retain original hard copy proofs of delivery obtained by us and/or any other associated documentation relating to deliveries for a minimum period of six months from the date of collection. After that we may destroy these items without any reference or obligation to you.</p>
+                <p>16. We will make one attempt to deliver your consignment, but if we cannot do so, we will have the option to either make a second attempt, or deliver to an alternative address provided by you, or return the consignment to you. Either of these alternatives will be at your cost, but we will contact you first to agree the best option. If we still cannot deliver your consignment we will contact you for further instructions.</p>
+                <p>17. If the consignment still cannot be delivered, we will give you 10 days notice that we intend to sell or dispose of the consignment. Any proceeds of sale (net of expenses) or costs of disposal will be applied to your account with us.</p>
+                <p>18. We may keep hold of your consignments until you have paid any amounts you owe us, even though these amounts may not relate to the items held. We may then sell the items held, but only after we have given you 14 days notice in writing. Any proceeds (net of expenses) will be applied to your account with us.</p>
+                <p>19. Where we are required to sign to acknowledge collection of your consignment, then that signature will not be regarded as evidence of the condition of the goods. If we are kept waiting or loading longer than 15 minutes at either the collection address or delivery address, we may charge you an additional amount, this being our standard hourly rate of the vehicle in question.</p>
+                <p>20. We will not be liable for any consequential or economic loss or damage suffered by you or any third party. Our liability is strictly limited to the cost of replacement of, or repair to, the goods sent in the consignment, subject to limits and conditions given below.</p>
+                <p>21. We will not be liable for any loss or damage to the consignment, or any delay or misdelivery if the cause was any of the following:<br>
+                    a) War, terrorism, riot, strike, lockout or any similar action.<br>
+                    b) Natural disasters (e.g. floods), poor or extreme weather conditions.<br>
+                    c) The consignment being seized or detained by any public authority.<br>
+                    d) Incorrect or insufficient address given on the consignment note or manifest. This includes any omission or ambiguity of information provided by you.<br>
+                    e) Incorrect or insufficient packaging of the consignment.<br>
+                    f) Natural wastage of a perishable or fragile consignment.<br>
+                    g) Traffic congestion or delay.<br>
+                    h) Any other event reasonable beyond our control.</p>
+                <p>22. If the loss or damage is our fault, then our liability to you is limited as follows:-
+                    a) Up to £10,000 per vehicle for same day delivery,
+                    b) Up to £100 per consignment for next day delivery,
+                    c) Up to £100 per consignment for international delivery.
+                    If these limits are not sufficient for your requirements, then we can provide extra insurance cover on individual consignments for an additional charge. You must notify us in writing before we collect from you, and agree to pay the extra amount. Alternatively, we can provide additional ‘blanket’ cover on all your consignments for an additional charge, the terms of which must be agreed in writing between us before any extra cover is in place.</p>
+                <p>23. We will not be liable for any loss or damage to any consignment that cannot be carried within lockable equipment normally provided on the vehicle you order from us. For example, if you order a motorcycle to make a delivery and your consignment is too big to fit in its carrying equipment, we may be able to carry it (providing it is safe to do so), but will not be liable for any loss or damage to that consignment.
+                    24. There are certain items we cannot accept liability for on any of our services. These include cash, notes, money orders, vouchers, credit cards, stamps, deeds, passports, tickets, travellers cheques, jewellery, precious stones, watches, precious metals, works of art, antiques, china, glass, living creatures and any other similar valuable articles.</p>
+                <p>25. If we are to consider any claim for non-delivery, late delivery, or loss or damage to the consignment, you must notify us in writing within 7 days of delivery for any shortage or damage, and within 14 days for any loss. We will be entitled to ask you for written evidence to establish the value of the loss or damage (for example, a copy invoice from supplier). We may also ask you to obtain an estimate for repair if appropriate.</p>
+                <p>26. You must still continue to pay our invoices in full as they become due, even though you may have submitted a claim to us.</p>
+                <p>27. From time to time, we may incur additional expenses in the course of delivering your consignments. These may be tolls, parking charges, rubbish disposal charges, or similar items. If we incur any such expenses, we will invoice them to you with normal delivery charges, and you will pay them within our credit terms.</p>
+                <p>28. Any quotation or estimate of charges given to you will be valid for 30 days, unless the quotation states otherwise. If you accept our quotation, delivery must take place within 30 days of the quotation date, otherwise revised charges may apply. We will only be bound by written quotations accepted by you, and you acceptance will be deemed to have been given when you ask us to make the delivery quoted for. Verbal quotations or estimates are expressed as a guide only, and will not be binding on us.</p>
+                <p>29. We may change our charges or these terms from time to time, but if we do we will give you advance notice.</p>
+                <p>30. We may, at our absolute discretion, withdraw credit facilities at any time. If we do, then all invoices will become immediately payable, irrespective of any credit terms or payment dates previously agreed between you and us. If you do not pay us within 30 days of invoice date, we will be entitled to charge you interest at the rate of 3% per month (or part thereof) from the invoice date to the date of payment. If we are required to take legal action to recover payment from you, our claim will include interest and all associated costs of such action.</p>
+                <p>31. We may check weigh some of your consignments, or establish the weight if you have not provided it to us. We will amend our charges to you in line with the actual weight determined by us, and our calculation of the weight cannot be altered afterwards. If a consignment normally charged by weight exceeds 5 cubic metres in measurement per 1000kg (or a rateable part thereof), we may charge you on a volume basis, calculated at a rate of 5 cubic metres per 1000kg,
+                    or part thereof.</p>
+<br>
+<br>
+                <h3>YOUR RIGHTS AND OBLIGATIONS</h3>
+                <p>32. Before asking us to deliver a consignment, you must make sure of the
+                    following:<br>
+                    a) If you are not the owner of the goods, you have the owner’s permission to enter into this agreement and ask us to make a delivery.<br>
+                    b) The goods in the consignment are not dangerous goods and do not present any health or safety risks, and the handling or possession of them is not a criminal offence, nor breaches any relevant statute or regulation.<br>
+                    c) Only those individuals duly authorised by you can make bookings with us, and they will supply to us (at the time of booking) any reference or purchase order you require to be shown on our invoices in order to process them for payment. If you fail to provide us with this information, or if the information is not correct, you will not be able to withhold payment at a later date.<br>
+                    d) The consignment is properly addressed and packaged. If, in our opinion, the packaging is not sufficient, we may either refuse to deliver it, or may repack it to the required standard. A reasonable charge will be made to you for any such repackaging.<br>
+                    e) You have made any necessary insurance arrangements (either with us or a third party) to provide the level of cover required, having regard to these items.</p>
+                <p>33. You will pay our invoices (including any VAT) in full and without deduction (apart from credit notes raised by us) within 30 days of the invoice date and in sterling. Any claims or demands from HM Customs in respect of dutiable items must be paid on demand.</p>
+                <p>34. You will raise any query you may have on our invoice within 21 days of the invoice date. After that time, you will be deemed to have accepted our invoice as correct, and will make payment within our agreed terms.</p>
+                <p>35. If you are in breach of any of these terms, you will be liable for any loss or expenses suffered by us as a result.</p>
+                <p>36. If your consignment needs special equipment (e.g. a forklift truck) or manpower to be loaded or unloaded, you must make sure it is available at both delivery and collection addresses. If such is not available, you will be liable for any resulting costs, which may include waiting, storage or redelivery charges.</p>
+                <p>37. Unless we are shown to be at fault, you will indemnify us for any claims or losses arising from our delivering consignments for you.</p>
+                <p>38. If you make a claim for damage to your consignment, you will keep (or arrange to keep) that consignment and all its packaging in a safe place and to one side in case we, or our loss adjusters, need to make inspection in the course of an investigation.</p>
+                <p>39. We have invested significant time and money in recruiting and training staff and engaging the services of courier subcontractors. If you engage (or arrange to engage on behalf of anyone else) any of our employees or subcontractors within 3 months of them leaving us, you will accept a charge from us equal to the last 3 months gross earnings of that person whilst engaged by us. We both agree that this is a fair estimate of our costs of replacing that person.</p>
+
+        <br>
+        <br>
+        <br>
+        <br>
+
+    </div>
+    <!--ВСЯ ИНФА ЗАКОНЧИЛАСЬ!-->
+    <!--ФУтер начало-->
+    <div class="container" style="margin-top: 100px;">
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="{{ url_for('router', to='index') }}" class="nav-link px-2 text-muted">Home</a></li>
+                <li class="nav-item"><a href="{{ url_for('router', to='services') }}" class="nav-link px-2 text-muted">Services</a></li>
+                <li class="nav-item"><a href="{{ url_for('router', to ='logistics') }}" class="nav-link px-2 text-muted">Logistics</a></li>
+                <li class="nav-item"><a href="{{ url_for('router', to = 'contacts') }}" class="nav-link px-2 text-muted">Contacts</a></li>
+                <li class="nav-item"><a href="{{ url_for('router', to='about') }}" class="nav-link px-2 text-muted">About</a></li>
+            </ul>
+            <p class="text-center text-muted">© 1998-2024 UDP Express, Inc</p>
+        </footer>
+    </div>
+    <!--ФУтер конец-->
+</body>
+
+</html>

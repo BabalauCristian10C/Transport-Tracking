@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='govno.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Админ панель</title>
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="nav__container">
+            <a href="{{ url_for('createtrack') }}" class="nav__link">Создать трэк</a>
+            <a href="{{ url_for('orders') }}" class="nav__link">Список трэков</a>
+            <a href="{{ url_for('logout') }}" class="nav__link">Выйти</a>
+        </div>
+    </nav>
+    <div class="main">
+        <h1 class="main__title">Админ панель</h1>
+        <div class="main__text">Добро пожаловать в админ панель udp-express</div>
+    </div>
+
+</body>
+
+</html>

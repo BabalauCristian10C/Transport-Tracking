@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UDP Express</title>
+    <link href="https://css.gg/css?=" rel="stylesheet">
+    <script src="static/assets/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="static/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/navbar-static/">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link type="image/png" sizes="32x32" rel="icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAMFJREFUSEvtleERATEQhb/rQAeoAB3ogBLoQAk6oQQ60IHRAR3ogFmzN3NWZJkVv3L/Mrt5X/Lmba6h8NcU1uevgCmwAQbBW52BJXAQne4NpNAPirfbRWtoATetRm170umKVUDrf7XIDbJrkVWQodm+kV3ocKbKj4SmYmqbZWgmwNUUesAxM/kfA0RXIGtgr5CZrnPPylcA1/hEQwW4rr1Y9Mvn+gSMbUznmoyRe7Z8wwVYATsLCOqmt0d/Lu6higPuzfInGSZy8y0AAAAASUVORK5CYII="/>
+<link rel="icon" href="/static/image/logo.svg" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        h1 {
+            font-weight: bolder;
+            color: white;
+        }
+
+        h2 {
+            font-weight: bolder;
+            color: white;
+        }
+
+        p {
+            font-size: 15px;
+            opacity: 70%;
+        }
+
+        .card-body1 {
+            padding: 50px;
+        }
+
+        .card {
+            border: 0 !important;
+        }
+
+        @media (max-width:961px) {
+            .fff {
+                flex-direction: column;
+                margin: 7%;
+            }
+            .mob80 {
+                width:80%;
+                margin:20px 10%;
+            }
+        }
+
+        .padding20 {
+            padding: 20px;
+        }
+
+        svg {
+            margin-bottom: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--ХЕДЕР-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top">
+        <div class="container justify-content-center">
+            <a class="navbar-brand" href="{{ url_for('router', to='index') }}"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="20" fill="currentColor" class="bi bi-box-seam" viewBox="0 0 16 16" style="margin-top: 6px;">
+  <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"></path>
+</svg>UDP&nbsp;Express</a>
+            <div class="collapse navbar-collapse justify-content-center" id="navbar1">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('router', to='index') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('router', to='services') }}">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('router', to ='logistics') }}">Logistics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('router', to = 'contacts') }}">Contacts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('router', to='about') }}">About us</a>
+                    </li>
+                </ul>
+            </div>
+            <div style="display: flex; justify-content: center; align-items: center; text-align: center;">
+                <a class="nav-link text-decoration-none text-light">support@udp-express.com</a>
+            </div>
+
+            <!-- Burger button -->
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbar1"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+                    class="navbar-toggler-icon"></span></button>
+
+        </div>
+    </nav>
+    <!--КОНЕЦ ХЕДЕРА-->
+    <!--ГЛАВНЫЙ БЛОК-->
+    <div
+        style="background-image: url(static/image/img.png); width: 100%; height: 500px; overflow: hidden; display: flex; align-items: center; position: relative;">
+        <div
+            style="display:flex; margin: auto; text-align: center; justify-content: space-around; flex-direction: column;">
+            <h1>OUR <span style="color:#0d6efd!important">SHIPPING</span> SERVICE</h1>
+            <h2>YOUR PATH TO PEACE OF MIND</h2>
+            <div style="margin-top: 20px;" class="input-group mob80">
+                <form class="input-group" style="margin-top: 20px;" action="{{ url_for('search') }}" method="POST">
+                    <input type="search" class="form-control rounded" name="track" placeholder="Your Track Number"
+                        aria-label="Search" aria-describedby="search-addon" />
+                    <button type="submit" class="btn btn-primary">search</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <!--ВСЯ ИНФА НАЧАЛО!-->
+    <div style="width:80%; margin: 5% 10%">
+        <h1 style="color:#0d6efd!important">Export</h1>
+        <p>The best rates for international delivery with excellent transit time. Send documents and goods to any part
+            of the world!</p>
+        <h3>Advantages:</h3>
+        <ul>
+            <li>Short delivery time</li>
+            <li>Uniform rate for delivery from any part of world</li>
+            <li>Assistance in preparing customs documents</li>
+            <li>Online tracking of delivery status, calculation of rates and delivery time</li>
+        </ul>
+        <br>
+        <br>
+        <h3>Description:</h3>
+        <h5>Geography:</h5>
+        <ul>
+            <li>184 countries of the world</li>
+        </ul>
+        <h5>Weight and dimensions:</h5>
+        <ul>
+            <li>0.2 kg and more for the delivery of documents and 0.5 kg and more for other shipments</li>
+            <li>35 kg as maximum weight of a single shipment item, with no restrictions for gross weight</li>
+            <li>Maximum length: 185 cm</li>
+            <li>Maximum girth: ((2 x width + 2 x height) + length) = 400 cm</li>
+        </ul>
+        <h5>Delivery time:</h5>
+        <ul>
+            <li>Average delivery time within country - 2 business days</li>
+            <li>Average international delivery time - 3 weeks*</li>
+            <p>*Delivery time depends on when the order was placed and given to a courier.</p>
+        </ul>
+        <br>
+        <br>
+        <h3>Value added services:</h3>
+        <p>If you need to carry a consignment, the weight and dimensions of which exceed standard parameters, please
+            fill out this form for our Overseas Services team to contact you to advise if we can deliver your
+            consignment and if so – our rates.</p>
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1 style="color:#0d6efd!important">Import</h1>
+        <p>UDP Express is your reliable delivery partner worldwide.
+
+            Our solution combines international practice of foreign delivery partners, long experience in customs
+            clearance and broad geography of delivery.
+
+            We offer solutions for the transportation of documents and goods for B2B customers as well as delivery of
+            goods from foreign online stores for individuals.</p>
+        <h3>Benefits:</h3>
+        <ul>
+            <li>International quality of services </li>
+            <li>Broad geography of delivery </li>
+            <li>Delivery payment in USD or EUR</li>
+            <li>Skilled professionals in customs clearance</li>
+            <li>Optimal rates</li>
+        </ul>
+        <br>
+        <p>For any questions, please contact the UDP Express International Development Department at: Email or submit your application on our website.</p>
+        <br>
+        <br>
+        <br>
+        <br>
+
+    </div>
+    <!--ВСЯ ИНФА ЗАКОНЧИЛАСЬ!-->
+    <!--ФУтер начало-->
+    <div class="container" style="margin-top: 100px;">
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="{{ url_for('router', to='index') }}" class="nav-link px-2 text-muted">Home</a></li>
+                <li class="nav-item"><a href="{{ url_for('router', to='services') }}" class="nav-link px-2 text-muted">Services</a></li>
+                <li class="nav-item"><a href="{{ url_for('router', to ='logistics') }}" class="nav-link px-2 text-muted">Logistics</a></li>
+                <li class="nav-item"><a href="{{ url_for('router', to = 'contacts') }}" class="nav-link px-2 text-muted">Contacts</a></li>
+                <li class="nav-item"><a href="{{ url_for('router', to='about') }}" class="nav-link px-2 text-muted">About</a></li>
+            </ul>
+            <p class="text-center text-muted">© 1998-2024 UDP Express, Inc</p>
+        </footer>
+    </div>
+    <!--ФУтер конец-->
+</body>
+
+</html>

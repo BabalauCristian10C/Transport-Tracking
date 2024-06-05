@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='govno.css') }}">
+</head>
+
+<body>
+
+    <body>
+        <div class="wrapper-center">
+            <form action = "{{ url_for('admin') }}" method="POST" class="form">
+                <span class="form__title">Введите имя пользователя и пароль для доступа в админ панель</span>
+                <div class="form__inputs">
+                    <input type="text" placeholder="Логин" name="a-username" id="username" class="input">
+                    <input type="text" placeholder="Пароль" name="a-password" id="password" class="input">
+                    <input type="submit" class="btn">
+                </div>
+            </form>
+        </div>
+
+    </body>
+
+</html>

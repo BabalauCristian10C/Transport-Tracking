@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="shortcut icon" href="001.png" type="image/x-icon"> -->
+    <link rel="icon" href="static/image/001.ico" type="image/x-icon"/>
+    <title>UDP Express</title>
+    <link href="https://css.gg/css?=" rel="stylesheet">
+    <script src="static/assets/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="static/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/navbar-static/">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link type="image/png" sizes="32x32" rel="icon" src="001.png"/>
+    <!-- <link rel="icon" href="/static/images/logo.svg" type="image/x-icon"> -->
+    <!-- <link rel="shortcut icon" href="001.ico" type="image/x-icon"> -->
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        h1 {
+            font-weight: bolder;
+            color: white;
+        }
+
+        h2 {
+            font-weight: bolder;
+            color: white;
+        }
+
+        p {
+            font-size: 15px;
+            opacity: 70%;
+        }
+
+        .card-body1 {
+            padding: 50px;
+        }
+
+        .card {
+            border: 0 !important;
+        }
+
+        @media (max-width:961px) {
+            .fff {
+                flex-direction: column;
+                margin: 7%;
+            }
+
+            .invis {
+                visibility: hidden;
+                display: none;
+            }
+
+            .d100 {
+                max-width: 100% !important;
+            }
+            .cenererere {
+                text-align:center;
+            }
+            .mob80 {
+                width:80%;
+                margin:20px 10%;
+            }
+        }
+
+        .padding20 {
+            padding: 20px;
+        }
+
+        svg {
+            margin-bottom: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--ХЕДЕР-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top">
+        <div class="container justify-content-center">
+            <a class="navbar-brand" href="{{ url_for('router', to='index') }}"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="20" fill="currentColor" class="bi bi-box-seam" viewBox="0 0 16 16" style="margin-top: 6px;">
+  <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"></path>
+</svg>UDP&nbsp;Express</a>
+            <div class="collapse navbar-collapse justify-content-center" id="navbar1">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('router', to='index') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('router', to='services') }}">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('router', to ='logistics') }}">Logistics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('router', to = 'contacts') }}">Contacts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('router', to='about') }}">About us</a>
+                    </li>
+                </ul>
+            </div>
+            <div style="display: flex; justify-content: center; align-items: center; text-align: center;">
+                <a class="nav-link text-decoration-none text-light">support@udp-express.com</a>
+            </div>
+
+            <!-- Burger button -->
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbar1"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+                    class="navbar-toggler-icon"></span></button>
+
+        </div>
+    </nav>
+    <!--КОНЕЦ ХЕДЕРА-->
+    <!--ГЛАВНЫЙ БЛОК-->
+    <div
+        style="background-image: url(/static/image/img.png); width: 100%; height: 500px; overflow: hidden; display: flex; align-items: center; position: relative;">
+        <div
+            style="display:flex; margin: auto; text-align: center; justify-content: space-around; flex-direction: column;">
+            <h1>OUR <span style="color:#0d6efd!important">SHIPPING</span> SERVICE</h1>
+            <h2>YOUR PATH TO PEACE OF MIND</h2>
+            <div style="margin-top: 20px;" class="input-group mob80">
+                <form class="input-group" style="margin-top: 20px;" action="{{ url_for('search') }}" method="POST">
+                    <input type="search" class="form-control rounded" name="track" placeholder="Your Track Number"
+                        aria-label="Search" aria-describedby="search-addon" />
+                    <button type="submit" class="btn btn-primary">search</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <!--Блок преимуществ-->
+    <div class="d-flex justify-content-center fff">
+        <div class="card" style="width: 18rem; margin: 5%;">
+            <div class="card-body card-body1 text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="65" height="65" fill="currentColor"
+                    class="bi bi-truck text-primary" viewBox="0 0 16 16">
+                    <path
+                        d="M0 3.5A1.5 1.5 0 0 1 1.5 2h9A1.5 1.5 0 0 1 12 3.5V5h1.02a1.5 1.5 0 0 1 1.17.563l1.481 1.85a1.5 1.5 0 0 1 .329.938V10.5a1.5 1.5 0 0 1-1.5 1.5H14a2 2 0 1 1-4 0H5a2 2 0 1 1-3.998-.085A1.5 1.5 0 0 1 0 10.5v-7zm1.294 7.456A1.999 1.999 0 0 1 4.732 11h5.536a2.01 2.01 0 0 1 .732-.732V3.5a.5.5 0 0 0-.5-.5h-9a.5.5 0 0 0-.5.5v7a.5.5 0 0 0 .294.456zM12 10a2 2 0 0 1 1.732 1h.768a.5.5 0 0 0 .5-.5V8.35a.5.5 0 0 0-.11-.312l-1.48-1.85A.5.5 0 0 0 13.02 6H12v4zm-9 1a1 1 0 1 0 0 2 1 1 0 0 0 0-2zm9 0a1 1 0 1 0 0 2 1 1 0 0 0 0-2z" />
+                </svg>
+                <h5 class="text-primary card-title fw-bold">Fast shipping</h5>
+                <p class="card-text">If you want to send your parcel to a specific location within a certain timeframe,
+                    you should opt for professional courier service.
+                    Here we are.</p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;  margin: 5%;">
+            <div class="card-body card-body1 text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="65" height="65" fill="currentColor"
+                    class="bi bi-globe-americas text-primary" viewBox="0 0 16 16">
+                    <path
+                        d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0ZM2.04 4.326c.325 1.329 2.532 2.54 3.717 3.19.48.263.793.434.743.484-.08.08-.162.158-.242.234-.416.396-.787.749-.758 1.266.035.634.618.824 1.214 1.017.577.188 1.168.38 1.286.983.082.417-.075.988-.22 1.52-.215.782-.406 1.48.22 1.48 1.5-.5 3.798-3.186 4-5 .138-1.243-2-2-3.5-2.5-.478-.16-.755.081-.99.284-.172.15-.322.279-.51.216-.445-.148-2.5-2-1.5-2.5.78-.39.952-.171 1.227.182.078.099.163.208.273.318.609.304.662-.132.723-.633.039-.322.081-.671.277-.867.434-.434 1.265-.791 2.028-1.12.712-.306 1.365-.587 1.579-.88A7 7 0 1 1 2.04 4.327Z" />
+                </svg>
+                <h5 class="text-primary card-title fw-bold">Worldwide</h5>
+                <p class="card-text">Sending parcel from one city to another is not a problem anymore. From door to
+                    door, country to country, you can count on us.
+                    We got it covered.</p>
+            </div>
+        </div>
+        <div class="card" style="width: 18rem;  margin: 5%;">
+            <div class="card-body card-body1 text-center">
+                <svg xmlns="http://www.w3.org/2000/svg" width="65" height="65" fill="currentColor"
+                    class="bi bi-database-lock text-primary" viewBox="0 0 16 16">
+                    <path
+                        d="M13 5.698a4.92 4.92 0 0 1-.904.525C11.022 6.711 9.573 7 8 7s-3.022-.289-4.096-.777A4.92 4.92 0 0 1 3 5.698V7c0 .374.356.875 1.318 1.313C5.234 8.729 6.536 9 8 9c.666 0 1.298-.056 1.876-.156-.43.31-.804.693-1.102 1.132A12.31 12.31 0 0 1 8 10c-1.573 0-3.022-.289-4.096-.777A4.92 4.92 0 0 1 3 8.698V10c0 .374.356.875 1.318 1.313C5.234 11.729 6.536 12 8 12h.027a4.548 4.548 0 0 0-.017.8A1.9 1.9 0 0 0 8 13c-1.573 0-3.022-.289-4.096-.777A4.916 4.916 0 0 1 3 11.698V13c0 .374.356.875 1.318 1.313C5.234 14.729 6.536 15 8 15c0 .363.097.704.266.997C8.178 16 8.089 16 8 16c-1.573 0-3.022-.289-4.096-.777C2.875 14.755 2 14.007 2 13V4c0-1.007.875-1.755 1.904-2.223C4.978 1.289 6.427 1 8 1s3.022.289 4.096.777C13.125 2.245 14 2.993 14 4v4.256a4.493 4.493 0 0 0-1.753-.249C12.787 7.654 13 7.289 13 7V5.698Zm-8.682-3.01C3.356 3.124 3 3.625 3 4c0 .374.356.875 1.318 1.313C5.234 5.729 6.536 6 8 6s2.766-.27 3.682-.687C12.644 4.875 13 4.373 13 4c0-.374-.356-.875-1.318-1.313C10.766 2.271 9.464 2 8 2s-2.766.27-3.682.687Z" />
+                    <path
+                        d="M9 13a1 1 0 0 1 1-1v-1a2 2 0 1 1 4 0v1a1 1 0 0 1 1 1v2a1 1 0 0 1-1 1h-4a1 1 0 0 1-1-1v-2Zm3-3a1 1 0 0 0-1 1v1h2v-1a1 1 0 0 0-1-1Z" />
+                </svg>
+                <h5 class="text-primary card-title fw-bold">Safe delivery</h5>
+                <p class="card-text">We offer insurance for every shipment. Our services ensure the safe and timely
+                    delivery of your package.
+                    Guaranteed.</p>
+            </div>
+        </div>
+    </div>
+    <!--Конец преимуществ-->
+    <!--О сервисе-->
+    <div class="d-flex justify-content-between align-items-center" style="width: 80%; margin: 5% 10%">
+        <div style="max-width: 50%;" class="d100">
+            <h1 class="text-primary cenererere">About us</h1>
+            <p class="cenererere">UDP Express offers you a wide range of high-quality express delivery services. Since the company was
+                founded in 1998, it has grown and become one of the leaders in the transportation and forwarding
+                services market, providing its customers with the highest possible delivery efficiency. We employ more
+                than 2000 specialists in our branches around the world. We provide our clients with a wide range of
+                services, including air transportation, Import/export transportation, Worldwide Transportation services,
+                overnight delivery, customs clearance services.</p>
+        </div>
+        <img src="/static/image/about.png" alt="" width="30%" class="invis">
+    </div>
+    <!--Конец о сервисе-->
+    <!--СОЛЮТИОНС БЛЯТЬ-->
+    <div style="margin-top: 10%">
+        <h1 class="text-primary text-center" style="margin-bottom: 5%">Solutions</h1>
+        <div style="width: 86%; margin: 0 7%" class="d-flex justify-content-center flex-column">
+            <div class="d-flex justify-content-between fff">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body padding20 text-center">
+
+                        <h5 class="text-primary card-title fw-bold">Shipping</h5>
+                        <p class="card-text">Services and technology for managing your shipping process—from individuals
+                            to enterprises, local to global.</p>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem; ">
+                    <div class="card-body padding20 text-center">
+
+                        <h5 class="text-primary card-title fw-bold">Tracking</h5>
+                        <p class="card-text">Monitoring and management solutions for individuals, complex global supply
+                            chains, and everyone in between.</p>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem; ">
+                    <div class="card-body padding20 text-center">
+
+                        <h5 class="text-primary card-title fw-bold">Contract Logistics</h5>
+                        <p class="card-text">Expertise and infrastructure to optimize your supply chain, from global
+                            delivery to warehousing and returns management.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="d-flex justify-content-between fff">
+                <div class="card" style="width: 18rem;">
+                    <div class="card-body padding20 text-center">
+
+                        <h5 class="text-primary card-title fw-bold">International Trade</h5>
+                        <p class="card-text">Services, resources, and technologies to help get your products through
+                            customs to market more quickly.</p>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem; ">
+                    <div class="card-body padding20 text-center">
+
+                        <h5 class="text-primary card-title fw-bold">Customer Solutions</h5>
+                        <p class="card-text">Collaborate with UPS experts to create a customized plan of services,
+                            solutions, and technology tools to meet your unique business challenges.</p>
+                    </div>
+                </div>
+                <div class="card" style="width: 18rem; ">
+                    <div class="card-body padding20 text-center">
+
+                        <h5 class="text-primary card-title fw-bold">E-Commerce</h5>
+                        <p class="card-text">Find shipping services and technology tools to enhance your online store or
+                            to create one from scratch.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!--СОЛЮТИОНС КОНЕЦ-->
+    <!--ФУтер начало-->
+    <div class="container" style="margin-top: 100px;">
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="{{ url_for('router', to='index') }}" class="nav-link px-2 text-muted">Home</a></li>
+                <li class="nav-item"><a href="{{ url_for('router', to='services') }}" class="nav-link px-2 text-muted">Services</a></li>
+                <li class="nav-item"><a href="{{ url_for('router', to ='logistics') }}" class="nav-link px-2 text-muted">Logistics</a></li>
+                <li class="nav-item"><a href="{{ url_for('router', to = 'contacts') }}" class="nav-link px-2 text-muted">Contacts</a></li>
+                <li class="nav-item"><a href="{{ url_for('router', to='about') }}" class="nav-link px-2 text-muted">About</a></li>
+            </ul>
+            <p class="text-center text-muted">© 1998-2024 UDP Express, Inc</p>
+        </footer>
+    </div>
+    <!--ФУтер конец-->
+</body>
+
+</html>

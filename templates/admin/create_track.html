@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename='govno.css') }}">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+    <title>Создать трек</title>
+</head>
+
+<body>
+    <nav class="nav">
+        <div class="nav__container">
+            <a href="{{ url_for('createtrack') }}" class="nav__link">Создать трэк</a>
+            <a href="{{ url_for('orders') }}" class="nav__link">Список трэков</a>
+            <a href="{{ url_for('logout') }}" class="nav__link">Выйти</a>
+        </div>
+    </nav>
+    <div class="main">
+        <h1 class="main__title">Создать трэк</h1>
+        <form action="{{ url_for('createtrack') }}" method="POST" class="main__form">
+            <div class="main__label">Введите данные трэка: </div>
+            <div class="main__inputs">
+                <input type="text" class="input input_l" name="sender" placeholder="Отправитель">
+                <input type="text" class="input input_l" name="recipient" placeholder="Получатель">
+                <input type="text" class="input input_l" name="weight" placeholder="Вес">
+                <input type="text" class="input input_l" name="track_number" placeholder="Номер трека">
+            </div>
+            <div class="main__label">Введите данные доставки: </div>
+            <div class="main__inputs">
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[0]" placeholder="Дата" value="{{ year }}-0{{ month }}-{{ day }} 19:14:45">
+                    <input type="text" class="input" name="names[0]" placeholder="Название" value="Picked up">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[1]" placeholder="Дата" value="{{ year }}-0{{ month }}-{{ day + 3 }} 21:13:55">
+                    <input type="text" class="input" name="names[1]" placeholder="Название" value="Processing">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[2]" placeholder="Дата" value="{{ year }}-0{{ month }}-{{ day + 5 }} 14:47:45">
+                    <input type="text" class="input" name="names[2]" placeholder="Название"
+                        value="Processing in the sorting center">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[3]" placeholder="Дата" value="{{ year }}-0{{ month }}-{{ day + 7 }} 16:32:27">
+                    <input type="text" class="input" name="names[3]" placeholder="Название"
+                        value="Left the sorting center">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[4]" placeholder="Дата" value="{{ year }}-0{{ month }}-{{ day + 9 }} 22:45:48">
+                    <input type="text" class="input" name="names[4]" placeholder="Название"
+                        value="Received for further processing">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[5]" placeholder="Дата" value="{{ year }}-0{{ month + 1 }}-01 04:55:58">
+                    <input type="text" class="input" name="names[5]" placeholder="Название" value="Processing">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[6]" placeholder="Дата" value="{{ year }}-0{{ month + 1 }}-04 01:06:27">
+                    <input type="text" class="input" name="names[6]" placeholder="Название"
+                        value="Processing in the sorting center">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[7]" placeholder="Дата" value="{{ year }}-0{{ month + 1 }}-05 11:29:13">
+                    <input type="text" class="input" name="names[7]" placeholder="Название"
+                        value="Left the sorting center">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[8]" placeholder="Дата" value="{{ year }}-0{{ month + 1 }}-08 12:29:13">
+                    <input type="text" class="input" name="names[8]" placeholder="Название"
+                        value="Received for further processing">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[9]" placeholder="Дата" value="{{ year }}-0{{ month + 1 }}-10 11:16:50">
+                    <input type="text" class="input" name="names[9]" placeholder="Название" value="Processing">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[10]" placeholder="Дата" value="{{ year }}-0{{ month + 1 }}-11 20:17:09">
+                    <input type="text" class="input" name="names[10]" placeholder="Название"
+                        value="Processing in the sorting center">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[11]" placeholder="Дата" value="{{ year }}-0{{ month + 1 }}-13 08:45:29">
+                    <input type="text" class="input" name="names[11]" placeholder="Название"
+                        value="Left the sorting center">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[12]" placeholder="Дата" value="{{ year }}-0{{ month + 1 }}-15 23:28:23">
+                    <input type="text" class="input" name="names[12]" placeholder="Название"
+                        value="Received for further processing">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[13]" placeholder="Дата" value="{{ year }}-0{{ month + 1 }}-18 20:38:39">
+                    <input type="text" class="input" name="names[13]" placeholder="Название"
+                        value="Transferred to customs">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[14]" placeholder="Дата" value="{{ year }}-0{{ month + 1 }}-20 00:15:01">
+                    <input type="text" class="input" name="names[14]" placeholder="Название"
+                        value="Customs clearance is completed">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[15]" placeholder="Дата" value="{{ year }}-0{{ month + 1 }}-21 23:03:12">
+                    <input type="text" class="input" name="names[15]" placeholder="Название"
+                        value="Export of international mail">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[16]" placeholder="Дата" value="{{ year }}-0{{ month + 1 }}-23 19:17:06">
+                    <input type="text" class="input" name="names[16]" placeholder="Название" value="Processing">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[17]" placeholder="Дата" value="{{ year }}-0{{ month + 1 }}-25 14:46:16">
+                    <input type="text" class="input" name="names[17]" placeholder="Название"
+                        value="Processing in the sorting center">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[18]" placeholder="Дата" value="{{ year }}-0{{ month + 1 }}-28 07:16:53">
+                    <input type="text" class="input" name="names[18]" placeholder="Название"
+                        value="Left the sorting center">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[19]" placeholder="Дата" value="{{ year }}-0{{ month + 1 }}-30 08:34:52">
+                    <input type="text" class="input" name="names[19]" placeholder="Название" value="Processing">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[20]" placeholder="Дата" value="{{ year }}-0{{ month + 1 }}-31 22:13:28">
+                    <input type="text" class="input" name="names[20]" placeholder="Название"
+                        value="Received for further processing">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[21]" placeholder="Дата" value="{{ year }}-0{{ month + 2 }}-02 23:05:21">
+                    <input type="text" class="input" name="names[21]" placeholder="Название" value="Processing">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[22]" placeholder="Дата" value="{{ year }}-0{{ month + 2 }}-04 23:29:10">
+                    <input type="text" class="input" name="names[22]" placeholder="Название"
+                        value="Processing in the sorting center">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[23]" placeholder="Дата" value="{{ year }}-0{{ month + 2 }}-07 09:56:45">
+                    <input type="text" class="input" name="names[23]" placeholder="Название"
+                        value="Left the sorting center">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[24]" placeholder="Дата" value="{{ year }}-0{{ month + 2 }}-09 05:05:31">
+                    <input type="text" class="input" name="names[24]" placeholder="Название" value="Processing">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[25]" placeholder="Дата" value="{{ year }}-0{{ month + 2 }}-11 08:46:30">
+                    <input type="text" class="input" name="names[25]" placeholder="Название"
+                        value="Received for further processing">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[26]" placeholder="Дата" value="{{ year }}-0{{ month + 2 }}-13 10:18:15">
+                    <input type="text" class="input" name="names[26]" placeholder="Название"
+                        value="Arrived in the country of destination">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[27]" placeholder="Дата" value="{{ year }}-0{{ month + 2 }}-15 16:09:14">
+                    <input type="text" class="input" name="names[27]" placeholder="Название"
+                        value="Сustoms registration">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[28]" placeholder="Дата" value="{{ year }}-0{{ month + 2 }}-17 07:38:24">
+                    <input type="text" class="input" name="names[28]" placeholder="Название"
+                        value="Customs clearance is completed">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[29]" placeholder="Дата" value="{{ year }}-0{{ month + 2 }}-19 22:02:58">
+                    <input type="text" class="input" name="names[29]" placeholder="Название" value="Processing">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[30]" placeholder="Дата" value="{{ year }}-0{{ month + 2 }}-21 14:44:24">
+                    <input type="text" class="input" name="names[30]" placeholder="Название" value="Transit">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[31]" placeholder="Дата" value="{{ year }}-0{{ month + 2 }}-24 02:42:40">
+                    <input type="text" class="input" name="names[31]" placeholder="Название"
+                        value="Arrived at the international sorting center">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[32]" placeholder="Дата" value="{{ year }}-0{{ month + 2 }}-025 16:15:02">
+                    <input type="text" class="input" name="names[32]" placeholder="Название" value="Processing">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[33]" placeholder="Дата" value="{{ year }}-0{{ month + 2 }}-28 00:49:49">
+                    <input type="text" class="input" name="names[33]" placeholder="Название"
+                        value="Left the sorting center">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[34]" placeholder="Дата" value="{{ year }}-0{{ month + 2 }}-30 10:38:20">
+                    <input type="text" class="input" name="names[34]" placeholder="Название"
+                        value="Arrived at the local sorting center">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[35]" placeholder="Дата" value="{{ year }}-0{{ month + 3 }}-02 02:12:33">
+                    <input type="text" class="input" name="names[35]" placeholder="Название"
+                        value="Left the local sorting center">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[36]" placeholder="Дата" value="{{ year }}-0{{ month + 3 }}-04 00:55:04">
+                    <input type="text" class="input" name="names[36]" placeholder="Название" value="Processing">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[37]" placeholder="Дата" value="{{ year }}-0{{ month + 3 }}-06 17:41:12">
+                    <input type="text" class="input" name="names[37]" placeholder="Название"
+                        value="Arrived at the local sorting center">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[38]" placeholder="Дата" value="{{ year }}-0{{ month + 3 }}-08 07:21:05">
+                    <input type="text" class="input" name="names[38]" placeholder="Название"
+                        value="Left the local sorting center">
+                </div>
+                <div class="main__row-input">
+                    <input type="text" class="input" name="dates[39]" placeholder="Дата" value="{{ year }}-0{{ month + 3 }}-10 07:51:08">
+                    <input type="text" class="input" name="names[39]" placeholder="Название"
+                        value="Waiting at the place of delivery">
+                </div>
+            </div>
+            <input type="submit" class="btn" value="Создать">
+        </form>
+    </div>
+
+</body>
+
+</html>

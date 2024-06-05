@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UDP Express</title>
+    <link href="https://css.gg/css?=" rel="stylesheet">
+    <script src="static/assets/dist/js/bootstrap.bundle.min.js"></script>
+    <link href="static/assets/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="canonical" href="https://getbootstrap.com/docs/5.0/examples/navbar-static/">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <link type="image/png" sizes="32x32" rel="icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAMFJREFUSEvtleERATEQhb/rQAeoAB3ogBLoQAk6oQQ60IHRAR3ogFmzN3NWZJkVv3L/Mrt5X/Lmba6h8NcU1uevgCmwAQbBW52BJXAQne4NpNAPirfbRWtoATetRm170umKVUDrf7XIDbJrkVWQodm+kV3ocKbKj4SmYmqbZWgmwNUUesAxM/kfA0RXIGtgr5CZrnPPylcA1/hEQwW4rr1Y9Mvn+gSMbUznmoyRe7Z8wwVYATsLCOqmt0d/Lu6higPuzfInGSZy8y0AAAAASUVORK5CYII="/>
+<link rel="icon" href="/static/image/logo.svg" type="image/x-icon">
+    <style>
+        body {
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        h1 {
+            font-weight: bolder;
+            color: white;
+        }
+
+        h2 {
+            font-weight: bolder;
+            color: white;
+        }
+
+        p {
+            font-size: 15px;
+            opacity: 70%;
+        }
+
+        .card-body1 {
+            padding: 50px;
+        }
+
+        .card {
+            border: 0 !important;
+        }
+
+        @media (max-width:961px) {
+            .fff {
+                flex-direction: column;
+                margin: 7%;
+            }
+            .mob80 {
+                width:80%;
+                margin:20px 10%;
+            }
+        }
+
+        .padding20 {
+            padding: 20px;
+        }
+
+        svg {
+            margin-bottom: 10px;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!--ХЕДЕР-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary static-top">
+        <div class="container justify-content-center">
+            <a class="navbar-brand" href="{{ url_for('router', to='index') }}"><svg xmlns="http://www.w3.org/2000/svg" width="40" height="20" fill="currentColor" class="bi bi-box-seam" viewBox="0 0 16 16" style="margin-top: 6px;">
+  <path d="M8.186 1.113a.5.5 0 0 0-.372 0L1.846 3.5l2.404.961L10.404 2l-2.218-.887zm3.564 1.426L5.596 5 8 5.961 14.154 3.5l-2.404-.961zm3.25 1.7-6.5 2.6v7.922l6.5-2.6V4.24zM7.5 14.762V6.838L1 4.239v7.923l6.5 2.6zM7.443.184a1.5 1.5 0 0 1 1.114 0l7.129 2.852A.5.5 0 0 1 16 3.5v8.662a1 1 0 0 1-.629.928l-7.185 2.874a.5.5 0 0 1-.372 0L.63 13.09a1 1 0 0 1-.63-.928V3.5a.5.5 0 0 1 .314-.464L7.443.184z"></path>
+</svg>UDP&nbsp;Express</a>
+            <div class="collapse navbar-collapse justify-content-center" id="navbar1">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('router', to='index') }}">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('router', to='services') }}">Services</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('router', to ='logistics') }}">Logistics</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('router', to = 'contacts') }}">Contacts</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ url_for('router', to='about') }}">About us</a>
+                    </li>
+                </ul>
+            </div>
+            <div style="display: flex; justify-content: center; align-items: center; text-align: center;">
+                <a class="nav-link text-decoration-none text-light">support@udp-express.com</a>
+            </div>
+
+            <!-- Burger button -->
+            <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbar1"
+                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
+                    class="navbar-toggler-icon"></span></button>
+
+        </div>
+    </nav>
+    <!--КОНЕЦ ХЕДЕРА-->
+    <!--ГЛАВНЫЙ БЛОК-->
+    <div
+        style="background-image: url(static/image/img.png); width: 100%; height: 500px; overflow: hidden; display: flex; align-items: center; position: relative;">
+        <div
+            style="display:flex; margin: auto; text-align: center; justify-content: space-around; flex-direction: column;">
+            <h1>OUR <span style="color:#0d6efd!important">SHIPPING</span> SERVICE</h1>
+            <h2>YOUR PATH TO PEACE OF MIND</h2>
+            <div style="margin-top: 20px;" class="input-group mob80">
+                <form class="input-group" style="margin-top: 20px;" action="{{ url_for('search') }}" method="POST">
+                    <input type="search" class="form-control rounded" name="track" placeholder="Your Track Number"
+                        aria-label="Search" aria-describedby="search-addon" />
+                    <button type="submit" class="btn btn-primary">search</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+    <!--ВСЯ ИНФА НАЧАЛО!-->
+    <div style="width:80%; margin: 5% 10%">
+
+        <h1 style="color:#0d6efd!important">Direct transport</h1>
+        <p>Freight handling by motor transport, fully or partly loaded with goods of one or more clients. “Direct
+            transport” delivery is available the CIS countries and Europe, with no terminal cargo handling en route.
+        </p>
+        <br>
+        <br>
+        <h3>Benefits of the service:</h3>
+        <ul>
+            <li>Vast delivery geography</li>
+            <li>Selection of the optimal transportation for your shipment</li>
+            <li>Delivery payment in USD or EUR</li>
+            <li>Flexible tariffs</li>
+            <li>Optimal rates</li>
+            <li>Cargo tracking at any point of the route</li>
+            <li>Economic viability for cargoes of medium and large tonnage</li>
+            <li>Shipment of different cargo categories, as well as organization of specified-time delivery with extended
+                loading and unloading times.</li>
+        </ul>
+        <br>
+        <br>
+        <br>
+
+        <h3>Detailed description of the service:</h3>
+        <p>Geography - Transportation of goods throughout the Customs Union and the CIS countries. Export and import
+            cargo transportation throughout the Central and East European countries and many other countries.</p>
+        <br>
+        <br>
+        <br>
+        <br>
+
+        <h1 style="color:#0d6efd!important">Consolidated cargo</h1>
+        <p> Delivery of small loads by international transport. Delivery is carried out by road throughout the CIS
+            countries, from Europe or to Europe.</p>
+        <br>
+        <br>
+        <h3>Benefits of the service:</h3>
+        <ul>
+            <li>Cost effective solutions for delivery of small cargoes throughout the CIS, from Europe or to Europe
+            </li>
+            <li>Flexible approach to tariffs</li>
+            <li>Door-to-door delivery</li>
+            <li>Economic viability for shipments of cargoes with medium and large tonnage</li>
+            <li>Cargo tracking at any point of the route</li>
+            <li>Economic viability for cargoes of medium and large tonnage</li>
+            <li>The possibility of synergy when using several services: international transport of cargo, customs
+                clearance, warehouse handling, shipment of a consolidated load . Shipment of different categories of
+                cargo, as well as organization of specified-time delivery with extended loading and unloading times.
+            </li>
+        </ul>
+
+        <br>
+        <br>
+        <h3>Detailed description of the service:</h3>
+        <p>UDP Express offers its customers favorable terms for export and import shipments of
+            consolidated
+            cargoes throughout the CIS, from Europe or to Europe.
+            Shipping of consolidated cargo is especially effective for you when you want to organize the delivery of a
+            small
+            shipment.
+            In this case, your cargo will be consolidated with cargoes of the other customers.
+            Delivery times are slightly longer, but this kind of shipping provides significant savings on logistics
+            costs.
+        </p>
+
+
+        <p>UDP Express offers its customers a service of an integrated supply chain in order to use the
+            most
+            cost-effective logistics solutions at each stage of the movement of the goods.</p>
+
+        <p>We guarantee to meet delivery dates, and the safety and confidentiality of your shipments.</p>
+
+        <p>You can track the status of the cargo delivery on our website, via our contact center.</p>
+
+        <p>Delivery time: 3 days and more. </p>
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <h1 style="color:#0d6efd!important">Freight transport</h1>
+        <br>
+        <p>Transportation of freight in containers from Asia and Western Europe, delivered by various modes of
+            transportation, as well as the delivery of containers from the Russian and European ports by road and rail.
+        </p>
+        <br>
+        <br>
+
+        <h3>Benefits of the service:</h3>
+        <ul>
+            <li>Vast delivery geography</li>
+            <li>Customs clearance of the consolidated load using UDP Express, other customs brokers, or
+                by the client</li>
+            <li>High transportation reliability and freight safety in sealed containers</li>
+            <li>Economic viability of cargo shipments from Western Europe and Asia</li>
+            <li>Door-to-door delivery by road and by rail if required.</li>
+        </ul>
+        <br>
+        <br>
+
+
+        <h3>Detailed description of the service:</h3>
+        <p>UDP Express helps to organize the import of goods from Asia and Western Europe.</p>
+
+        <p>Intermodal freight transport refers to the combined, well-organized transportation of cargo, delivered by
+            various means of international transport.
+            It is based on the delivery of cargoes in sealed containers.
+            UDP Express provides intermodal container transportation “from door to door” if required.
+            We are also happy to offer interesting conditions for the delivery of containers from the ports including
+            delivery to your warehouse.</p>
+
+        <p>Today, container transport is truly considered to be one of the most reliable forms of delivery.
+            High strength containers protect the cargo from the environment and external damage during transportation.
+            Automated loading and unloading of cargo in containers can bring significant savings to these operations and
+            make them fast.</p>
+
+        <p>UDP Express is ready to guarantee its customers efficient and reliable delivery of goods in a
+            short time.
+            We are ready to provide various types of containers to our customers for transportation of a wide range of
+            goods.</p>
+
+        <p>UDP Express offers its customers a service of an integrated supply chain in order to use the
+            most cost-effective logistics
+            solutions at each stage of the movement of the goods.</p>
+
+
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+        <br>
+
+
+    </div>
+    <!--ВСЯ ИНФА ЗАКОНЧИЛАСЬ!-->
+    <!--ФУтер начало-->
+    <div class="container" style="margin-top: 100px;">
+        <footer class="py-3 my-4">
+            <ul class="nav justify-content-center border-bottom pb-3 mb-3">
+                <li class="nav-item"><a href="{{ url_for('router', to='index') }}" class="nav-link px-2 text-muted">Home</a></li>
+                <li class="nav-item"><a href="{{ url_for('router', to='services') }}" class="nav-link px-2 text-muted">Services</a></li>
+                <li class="nav-item"><a href="{{ url_for('router', to ='logistics') }}" class="nav-link px-2 text-muted">Logistics</a></li>
+                <li class="nav-item"><a href="{{ url_for('router', to = 'contacts') }}" class="nav-link px-2 text-muted">Contacts</a></li>
+                <li class="nav-item"><a href="{{ url_for('router', to='about') }}" class="nav-link px-2 text-muted">About</a></li>
+            </ul>
+            <p class="text-center text-muted">© 1998-2024 UDP Express, Inc</p>
+        </footer>
+    </div>
+    <!--ФУтер конец-->
+</body>
+
+</html>
